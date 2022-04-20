@@ -65,7 +65,10 @@ class SteamPrices {
 
     static #getData (data) {
         if (!data.success) return "Nothing matched, try another configuration"
-        return "Average price: " + data.median_price.toString() + "\nPrice now: " + data.lowest_price.toString()
+        return {
+            currentPrice: data.lowest_price,
+            medianPrice: data.median_price
+        }
     }
 
     getPrices (userFunc) {
