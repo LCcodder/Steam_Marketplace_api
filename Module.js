@@ -82,7 +82,7 @@ class SteamPrices {
             let requestResult
             try {
                 requestResult = JSON.parse(body)
-                requestResult = Request.#getData(requestResult)
+                requestResult = SteamPrice.#getData(requestResult)
             } catch (err) {
                 requestResult = "Error, nothing matched"
             }
